@@ -5,7 +5,7 @@ const Card = ({ name, image, exercises }) => {
   return (
     <>
       <Link
-        href={"/exercise/" + name.toLowerCase()}
+        href={`/exercise/${name.toLowerCase()}`}
         className="flex border group rounded-md border-neutral-300 flex-col overflow-hidden"
       >
         <img
