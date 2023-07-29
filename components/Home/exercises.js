@@ -67,7 +67,7 @@ const Exercises = [
       },
       {
         name: "Plank with Straight Hands",
-        video: "plank.gif",
+        video: "plank.webp",
         description:
           "Get into a straight arm plank position balancing on forearms and toes. Keeping body in straight line, raise up onto hands by straightening arms. Hold for a few seconds then lower back down onto forearms and repeat.",
       },
@@ -128,37 +128,37 @@ const Exercises = [
     image: "full_body.webp",
     exercises: [
       {
-        name: "Barbell Squats (Legs)",
+        name: "Barbell Squats",
         video: "bb-back-squats.gif",
         description:
           "Set bar on upper back and stand with feet shoulder width apart. Send hips back and bend knees to lower into a squat. Descend until thighs are parallel to floor then drive through heels to return to start position.",
       },
       {
-        name: "Barbell Bench Press (Push)",
+        name: "Barbell Bench Press",
         video: "bb-bench-press.gif",
         description:
           "Lie back on a flat bench holding barbell above chest with overhand grip. Lower bar to chest by bending elbows out to sides. Touch chest then press bar back up by extending arms.",
       },
       {
-        name: "Pull-Ups (Pull)",
+        name: "Pull-Ups",
         video: "weighted-pullup.gif",
         description:
           "Grasp pull-up bar with palms facing forward using overhand grip. Hang with arms extended then pull yourself up until chin clears bar. Lower back down with control and repeat.",
       },
       {
-        name: "Barbell Deadlifts (Legs)",
+        name: "Barbell Deadlifts",
         video: "deadlifts.gif",
         description:
           "Stand behind bar midfoot with hip-width stance. Bend at hips to grip bar outside legs while keeping back flat. Drive through heels and extend hips and knees to stand up, lifting bar. Lower under control.",
       },
       {
-        name: "Push-Ups (Push)",
+        name: "Push-Ups",
         video: "pushups.gif",
         description:
           "In plank position with hands under shoulders, bend elbows to lower chest to ground until elbows are at 90 degree angle. Pause then press back up to starting plank position by extending arms.",
       },
       {
-        name: "Bent Over Barbell Rows (Pull)",
+        name: "Bent Over Barbell Rows",
         video: "bb-under-hand-row.gif",
         description:
           "With knees bent, hinge at hips to bend torso forward, holding barbell. Keeping back flat, pull barbell up towards lower chest by driving elbows back and squeezing shoulder blades. Lower under control.",

@@ -4,17 +4,18 @@ import { GoDot } from "react-icons/go";
 const Card = ({ name, image, exercises }) => {
   return (
     <>
-      <Link
-        href={`/exercise/${name.toLowerCase()}`}
-        className="flex border group rounded-md border-neutral-300 flex-col overflow-hidden"
-      >
-        <img
-          src={`/img/${image}`}
-          alt=""
-          className="object-cover h-40 w-full"
-        />
+      <div className="flex border rounded-md border-neutral-300 flex-col overflow-hidden">
+        <Link href={name.toLowerCase().replace(" ", "_")}>
+          <img
+            src={`/img/${image}`}
+            alt=""
+            className="object-cover h-40 w-full"
+          />
+        </Link>
         <div className="flex flex-col p-4 space-y-4">
-          <h2 className="font-bold text-xl text-neutral-800">{name}</h2>
+          <h2 className="font-bold text-xl text-neutral-800 hover:underline underline-offset-4">
+            <Link href={name.toLowerCase().replace(" ", "_")}>{name}</Link>
+          </h2>
           <ul className="flex flex-col space-y-2">
             {exercises.map((exercise) => (
               <li key={exercise} className="flex items-center flex-row">
@@ -23,11 +24,14 @@ const Card = ({ name, image, exercises }) => {
               </li>
             ))}
           </ul>
-          <button className="w-full py-2 text-center bg-black text-white rounded-md font-medium capitalize hover:bg-black/80">
+          <Link
+            href={name.toLowerCase().replace(" ", "_")}
+            className="w-full py-2 text-center bg-black text-white rounded-md font-medium capitalize hover:bg-black/80"
+          >
             start training
-          </button>
+          </Link>
         </div>
-      </Link>
+      </div>
     </>
   );
 };
