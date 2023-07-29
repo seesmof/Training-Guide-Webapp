@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -12,7 +11,7 @@ const WorkoutPlan = ({ name, image, exercises }) => {
           </div>
           <img
             src={`/img/${image}`}
-            alt="a guy doing a push workout"
+            alt={`a guy doing a ${name} workout`}
             className="object-cover lg:p-6 w-full lg:h-[30vh] h-[25vh]"
           />
         </div>
@@ -33,9 +32,14 @@ const WorkoutPlan = ({ name, image, exercises }) => {
                   className="object-cover object-center max-w-md max-h-60 rounded-md w-full md:w-[40%]"
                 />
                 <div className="flex flex-col space-y-2 md:space-y-2">
-                  <h2 className="font-medium text-lg lg:text-xl">
+                  <a
+                    href={exercise.help}
+                    className="font-medium text-lg lg:text-xl"
+                    target="_blank"
+                    title="See a more detailed instruction for the exercise"
+                  >
                     {exercise.name}
-                  </h2>
+                  </a>
                   <p className="text-sm">{exercise.description}</p>
                   <div className="flex flex-row space-x-4">
                     <p className="font-medium flex flex-row gap-1">

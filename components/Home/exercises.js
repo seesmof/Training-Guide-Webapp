@@ -61,6 +61,7 @@ const Exercises = [
     exercises: [
       {
         name: "Weighted Pull-Ups",
+        help: "https://www.muscleandstrength.com/exercises/weighted-pull-up",
         sets: 4,
         reps: 6,
         video: "pullUps",
@@ -69,6 +70,7 @@ const Exercises = [
       },
       {
         name: "Barbell Biceps Curls",
+        help: "https://www.muscleandstrength.com/exercises/standing-barbell-curl.html",
         sets: 3,
         reps: 10,
         video: "bicepCurls",
@@ -77,6 +79,7 @@ const Exercises = [
       },
       {
         name: "Bent Over Dumbbell Rows",
+        help: "https://www.muscleandstrength.com/exercises/bent-over-dumbbell-row.html",
         sets: 3,
         reps: 10,
         video: "dbRows",
@@ -85,6 +88,7 @@ const Exercises = [
       },
       {
         name: "Plank with Straight Hands",
+        help: "https://www.muscleandstrength.com/exercises/hover.html",
         sets: 3,
         reps: "60s",
         video: "plank",
@@ -93,6 +97,7 @@ const Exercises = [
       },
       {
         name: "Abs V-Ups",
+        help: "https://www.builtlean.com/v-ups-lower-abs-exercise-5-tips-3-variations/",
         sets: 3,
         reps: 10,
         video: "vUps",
@@ -101,6 +106,7 @@ const Exercises = [
       },
       {
         name: "Bent Over Barbell Rows",
+        help: "https://www.muscleandstrength.com/exercises/bent-over-barbell-row.html",
         sets: 3,
         reps: 10,
         video: "bbRows",
@@ -116,6 +122,7 @@ const Exercises = [
     exercises: [
       {
         name: "Dumbbell Squats",
+        help: "https://www.muscleandstrength.com/exercises/dumbbell-squat.html",
         sets: 4,
         reps: 10,
         video: "dbSquats",
@@ -124,6 +131,7 @@ const Exercises = [
       },
       {
         name: "Dumbbell Calves Raises",
+        help: "https://www.muscleandstrength.com/exercises/standing-one-leg-calf-raise-with-dumbbell.html",
         sets: 4,
         reps: 15,
         video: "dbCalves",
@@ -132,6 +140,7 @@ const Exercises = [
       },
       {
         name: "Barbell Deadlifts",
+        help: "https://www.muscleandstrength.com/exercises/deadlifts.html",
         sets: 4,
         reps: 6,
         video: "bbDeadlifts",
@@ -140,6 +149,7 @@ const Exercises = [
       },
       {
         name: "Barbell Hip Thrusts",
+        help: "https://www.muscleandstrength.com/exercises/barbell-hip-thrust",
         sets: 3,
         reps: 10,
         video: "bbHipThrusts",
@@ -148,6 +158,7 @@ const Exercises = [
       },
       {
         name: "Dumbbell Lunges",
+        help: "https://www.muscleandstrength.com/exercises/dumbbell-lunge.html",
         sets: 3,
         reps: 10,
         video: "dbLunge",
@@ -163,6 +174,7 @@ const Exercises = [
     exercises: [
       {
         name: "Barbell Squats",
+        help: "https://www.muscleandstrength.com/exercises/squat.html",
         sets: 4,
         reps: 8,
         video: "dbSquats",
@@ -171,6 +183,7 @@ const Exercises = [
       },
       {
         name: "Barbell Bench Press",
+        help: "https://www.muscleandstrength.com/exercises/barbell-bench-press.html",
         sets: 4,
         reps: 8,
         video: "benchPress",
@@ -179,6 +192,7 @@ const Exercises = [
       },
       {
         name: "Pull-Ups",
+        help: "https://www.muscleandstrength.com/exercises/pull-up",
         sets: 3,
         reps: 8,
         video: "pullUps",
@@ -187,6 +201,7 @@ const Exercises = [
       },
       {
         name: "Barbell Deadlifts",
+        help: "https://www.muscleandstrength.com/exercises/deadlifts.html",
         sets: 4,
         reps: 5,
         video: "bbDeadlifts",
@@ -195,6 +210,7 @@ const Exercises = [
       },
       {
         name: "Push-Ups",
+        help: "https://www.muscleandstrength.com/exercises/push-up.html",
         sets: 3,
         reps: 10,
         video: "pushUps",
@@ -203,6 +219,7 @@ const Exercises = [
       },
       {
         name: "Bent Over Barbell Rows",
+        help: "https://www.muscleandstrength.com/exercises/bent-over-barbell-row.html",
         sets: 3,
         reps: 10,
         video: "bbRows",
