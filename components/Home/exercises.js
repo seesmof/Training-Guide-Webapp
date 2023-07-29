@@ -6,6 +6,7 @@ const Exercises = [
     exercises: [
       {
         name: "Push-Ups",
+        help: "https://www.muscleandstrength.com/exercises/push-up.html",
         sets: 3,
         reps: 10,
         video: "pushUps",
@@ -14,6 +15,7 @@ const Exercises = [
       },
       {
         name: "Barbell Bench Press",
+        help: "https://www.muscleandstrength.com/exercises/barbell-bench-press.html",
         sets: 4,
         reps: 8,
         video: "benchPress",
@@ -22,6 +24,7 @@ const Exercises = [
       },
       {
         name: "Couch Dips",
+        help: "https://www.muscleandstrength.com/exercises/single-bench-dip.html",
         sets: 3,
         reps: 12,
         video: "benchDip",
@@ -30,6 +33,7 @@ const Exercises = [
       },
       {
         name: "Lean-Away Dumbbell Lateral Raise",
+        help: "https://www.muscleandstrength.com/exercises/dumbbell-lateral-raise.html",
         sets: 3,
         reps: 12,
         video: "lateralRaise",
@@ -38,6 +42,7 @@ const Exercises = [
       },
       {
         name: "Dumbbell Triceps",
+        help: "https://www.muscleandstrength.com/exercises/two-arm-dumbbell-extension.html",
         sets: 3,
         reps: 10,
         video: "dbTricep",
@@ -46,6 +51,7 @@ const Exercises = [
       },
       {
         name: "Standing Dumbbell Shoulder Press",
+        help: "https://www.muscleandstrength.com/exercises/standing-dumbbell-press.html",
         sets: 3,
         reps: 10,
         video: "shoulderPress",
