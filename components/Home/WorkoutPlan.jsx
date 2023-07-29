@@ -6,19 +6,18 @@ const WorkoutPlan = ({ name, image, exercises }) => {
   return (
     <>
       <div className="flex flex-col container mx-auto max-w-5xl">
-        <div className="lg:p-6">
+        <div className="relative">
+          <div className="absolute top-0 bottom-0 right-0 left-0 bg-black/30 flex items-center justify-center text-white font-bold text-2xl md:text-3xl lg:text-4xl lg:m-6">
+            {name}
+          </div>
           <img
             src={`/img/${image}`}
             alt="a guy doing a push workout"
-            className="object-cover w-full lg:rounded-md h-[25vh]"
+            className="object-cover lg:p-6 w-full lg:h-[30vh] h-[25vh]"
           />
         </div>
 
         <div className="p-4 lg:px-6 flex flex-col flex-1 space-y-4">
-          <h1 className="font-bold text-center text-2xl lg:text-3xl">
-            {name} Workout
-          </h1>
-
           <div className="flex flex-col space-y-6">
             {exercises.map((exercise) => (
               <div

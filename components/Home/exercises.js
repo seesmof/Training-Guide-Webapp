@@ -118,7 +118,7 @@ const Exercises = [
         name: "Dumbbell Squats",
         sets: 4,
         reps: 10,
-        video: "",
+        video: "dbSquats",
         description:
           "Stand holding dumbbells at your sides with feet shoulder width. Initiate movement by pushing hips back and bending knees to lower into a squat. Descend until thighs are parallel or below knee level, then press through heels to stand back up.",
       },
@@ -126,7 +126,7 @@ const Exercises = [
         name: "Dumbbell Calves Raises",
         sets: 4,
         reps: 15,
-        video: "",
+        video: "dbCalves",
         description:
           "Stand holding dumbbells by your sides with feet hip width. Rise up onto balls of feet, lifting heels as high as possible. Pause at top then slowly lower back down to starting position with control.",
       },
@@ -134,7 +134,7 @@ const Exercises = [
         name: "Barbell Deadlifts",
         sets: 4,
         reps: 6,
-        video: "",
+        video: "bbDeadlifts",
         description:
           "Stand behind barbell midfoot with feet hip width apart. Hinge at hips to grip bar outside legs, back flat. Drive through heels and extend hips and knees to stand up, lifting bar. Lower bar back to floor with control.",
       },
@@ -142,7 +142,7 @@ const Exercises = [
         name: "Barbell Hip Thrusts",
         sets: 3,
         reps: 10,
-        video: "",
+        video: "bbHipThrusts",
         description:
           "Sit on ground with shoulders against a bench and barbell over hips. With feet on floor, drive through heels to raise hips, lifting bar. Squeeze glutes at top then lower back down to start.",
       },
@@ -150,7 +150,7 @@ const Exercises = [
         name: "Dumbbell Lunges",
         sets: 3,
         reps: 10,
-        video: "",
+        video: "dbLunge",
         description:
           "Stand holding dumbbells at your sides. Step forward with one leg, lowering into a lunge by bending both knees to 90 degrees. Push off rear foot to return to standing and alternate legs.",
       },
@@ -165,7 +165,7 @@ const Exercises = [
         name: "Barbell Squats",
         sets: 4,
         reps: 8,
-        video: "",
+        video: "dbSquats",
         description:
           "Set bar on upper back and stand with feet shoulder width apart. Send hips back and bend knees to lower into a squat. Descend until thighs are parallel to floor then drive through heels to return to start position.",
       },
@@ -173,7 +173,7 @@ const Exercises = [
         name: "Barbell Bench Press",
         sets: 4,
         reps: 8,
-        video: "",
+        video: "benchPress",
         description:
           "Lie back on a flat bench holding barbell above chest with overhand grip. Lower bar to chest by bending elbows out to sides. Touch chest then press bar back up by extending arms.",
       },
@@ -181,7 +181,7 @@ const Exercises = [
         name: "Pull-Ups",
         sets: 3,
         reps: 8,
-        video: "",
+        video: "pullUps",
         description:
           "Grasp pull-up bar with palms facing forward using overhand grip. Hang with arms extended then pull yourself up until chin clears bar. Lower back down with control and repeat.",
       },
@@ -189,7 +189,7 @@ const Exercises = [
         name: "Barbell Deadlifts",
         sets: 4,
         reps: 5,
-        video: "",
+        video: "bbDeadlifts",
         description:
           "Stand behind bar midfoot with hip-width stance. Bend at hips to grip bar outside legs while keeping back flat. Drive through heels and extend hips and knees to stand up, lifting bar. Lower under control.",
       },
@@ -197,7 +197,7 @@ const Exercises = [
         name: "Push-Ups",
         sets: 3,
         reps: 10,
-        video: "",
+        video: "pushUps",
         description:
           "In plank position with hands under shoulders, bend elbows to lower chest to ground until elbows are at 90 degree angle. Pause then press back up to starting plank position by extending arms.",
       },
@@ -205,7 +205,7 @@ const Exercises = [
         name: "Bent Over Barbell Rows",
         sets: 3,
         reps: 10,
-        video: "",
+        video: "bbRows",
         description:
           "With knees bent, hinge at hips to bend torso forward, holding barbell. Keeping back flat, pull barbell up towards lower chest by driving elbows back and squeezing shoulder blades. Lower under control.",
       },
