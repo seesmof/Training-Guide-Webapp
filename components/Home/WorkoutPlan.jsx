@@ -20,9 +20,12 @@ const WorkoutPlan = ({ name, image, exercises }) => {
           <div className="flex flex-col space-y-6">
             {exercises.map((exercise) => (
               <div key={exercise} className="flex flex-row space-x-3">
-                <img
+                <video
                   src={`/img/${exercise.video}`}
-                  alt=""
+                  autoPlay
+                  muted
+                  loop
+                  controls={false}
                   className="object-cover object-center max-w-md max-h-60 rounded-md lg:w-full w-1/2"
                 />
                 <div className="flex flex-col space-y-2">
