@@ -19,7 +19,7 @@ const Card = ({ name, image, exercises }) => {
             {exercises.map((exercise) => (
               <li key={exercise} className="flex items-center flex-row">
                 <GoDot />
-                <span className="ml-1.5">{exercise}</span>
+                <span className="ml-1.5">{exercise.name}</span>
               </li>
             ))}
           </ul>

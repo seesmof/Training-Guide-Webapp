@@ -4,12 +4,30 @@ const Exercises = [
     name: "Push",
     image: "push.jpg",
     exercises: [
-      "Push-Ups",
-      "Barbell Bench Press",
-      "Couch Dips",
-      "Lean-Away Dumbbell Lateral Raise",
-      "Dumbbell Triceps",
-      "Standing Dumbbell Shoulder Press",
+      {
+        name: "Push-Ups",
+        video: "",
+      },
+      {
+        name: "Barbell Bench Press",
+        video: "",
+      },
+      {
+        name: "Couch Dips",
+        video: "",
+      },
+      {
+        name: "Lean-Away Dumbbell Lateral Raise",
+        video: "",
+      },
+      {
+        name: "Dumbbell Triceps",
+        video: "",
+      },
+      {
+        name: "Standing Dumbbell Shoulder Press",
+        video: "",
+      },
     ],
   },
   {
@@ -17,12 +35,30 @@ const Exercises = [
     name: "Pull",
     image: "pull.webp",
     exercises: [
-      "Weighted Pull-Ups",
-      "Barbell Biceps Curls",
-      "Bent Over Dumbbell Rows",
-      "Plank with Straight Hands",
-      "Abs Sit-Ups",
-      "Bent Over Barbell Rows",
+      {
+        name: "Weighted Pull-Ups",
+        video: "",
+      },
+      {
+        name: "Barbell Biceps Curls",
+        video: "",
+      },
+      {
+        name: "Bent Over Dumbbell Rows",
+        video: "",
+      },
+      {
+        name: "Plank with Straight Hands",
+        video: "",
+      },
+      {
+        name: "Abs Sit-Ups",
+        video: "",
+      },
+      {
+        name: "Bent Over Barbell Rows",
+        video: "",
+      },
     ],
   },
   {
@@ -30,11 +66,26 @@ const Exercises = [
     name: "Legs",
     image: "legs.jpg",
     exercises: [
-      "Dumbbell Squats",
-      "Dumbbell Calves Raises",
-      "Barbell Deadlifts",
-      "Barbell Hip Thrusts",
-      "Dumbbell Lunges",
+      {
+        name: "Dumbbell Squats",
+        video: "",
+      },
+      {
+        name: "Dumbbell Calves Raises",
+        video: "",
+      },
+      {
+        name: "Barbell Deadlifts",
+        video: "",
+      },
+      {
+        name: "Barbell Hip Thrusts",
+        video: "",
+      },
+      {
+        name: "Dumbbell Lunges",
+        video: "",
+      },
     ],
   },
   {
@@ -42,12 +93,30 @@ const Exercises = [
     name: "Full Body",
     image: "full_body.webp",
     exercises: [
-      "Barbell Squats (Legs)",
-      "Barbell Bench Press (Push)",
-      "Pull-Ups (Pull)",
-      "Barbell Deadlifts (Legs)",
-      "Push-Ups (Push)",
-      "Bent Over Barbell Rows (Pull)",
+      {
+        name: "Barbell Squats (Legs)",
+        video: "",
+      },
+      {
+        name: "Barbell Bench Press (Push)",
+        video: "",
+      },
+      {
+        name: "Pull-Ups (Pull)",
+        video: "",
+      },
+      {
+        name: "Barbell Deadlifts (Legs)",
+        video: "",
+      },
+      {
+        name: "Push-Ups (Push)",
+        video: "",
+      },
+      {
+        name: "Bent Over Barbell Rows (Pull)",
+        video: "",
+      },
     ],
   },
 ];
