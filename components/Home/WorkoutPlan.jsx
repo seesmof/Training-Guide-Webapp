@@ -21,7 +21,7 @@ const WorkoutPlan = ({ name, image, exercises }) => {
             {exercises.map((exercise) => (
               <div key={exercise} className="flex flex-row space-x-3">
                 <video
-                  src={`/img/${exercise.video}`}
+                  src={`/img/${exercise.video}.mp4`}
                   autoPlay
                   muted
                   loop

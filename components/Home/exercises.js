@@ -7,21 +7,21 @@ const Exercises = [
       {
         name: "Push-Ups",
         gif: "pushups.gif",
-        video: "pushUps.mp4",
+        video: "pushUps",
         description:
           "Get into a high plank position with hands directly under shoulders and legs extended behind you. Keeping your core engaged, bend elbows to lower chest towards the ground until elbows are at a 90 degree angle. Pause briefly before pressing back up to starting position in a controlled motion.",
       },
       {
         name: "Barbell Bench Press",
         gif: "bb-bench-press.gif",
-        video: "",
+        video: "benchPress",
         description:
           "Lie back on a flat bench holding a barbell above your chest with an overhand grip slightly wider than shoulder width. Lower bar to chest by bending elbows, keeping them tucked in at your sides. Touch bar to chest then press back up to starting position by extending arms.",
       },
       {
         name: "Couch Dips",
         gif: "couch-dips.gif",
-        video: "",
+        video: "benchDip",
         description:
           "Sit on the edge of a sturdy couch or chair, placing hands behind you on the edge with fingers pointing forward. Walk feet out and straighten arms to lift hips off the couch into an extended position. Bend elbows to lower body towards floor, then straighten to raise back up.",
       },
