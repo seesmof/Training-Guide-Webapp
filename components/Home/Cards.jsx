@@ -1,8 +1,8 @@
 import React from "react";
-import Exercises from "./exercises";
+import Exercises from "../exercises";
 import Card from "./Card";
 
-const HomeCards = () => {
+const Cards = () => {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -14,4 +14,4 @@ const HomeCards = () => {
   );
 };
 
-export default HomeCards;
+export default Cards;

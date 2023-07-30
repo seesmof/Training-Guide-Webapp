@@ -24,10 +24,7 @@ const Card = ({ name, image, exercises }) => {
               </li>
             ))}
           </ul>
-          <Link
-            href={name.toLowerCase().replace(" ", "_")}
-            className="w-full py-2 text-center bg-black text-white rounded-md font-medium capitalize hover:bg-black/80"
-          >
+          <Link href={name.toLowerCase().replace(" ", "_")} className="btn">
             start training
           </Link>
         </div>

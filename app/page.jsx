@@ -1,4 +1,4 @@
-import HomeCards from "@/components/Home/HomeCards";
+import HomeCards from "@/components/Home/Cards";
 
 const HomePage = () => {
   return (

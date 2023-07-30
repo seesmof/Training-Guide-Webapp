@@ -1,5 +1,5 @@
-import WorkoutPlan from "@/components/Home/WorkoutPlan";
-import Exercises from "@/components/Home/exercises";
+import WorkoutPlan from "@/components/Setup/WorkoutPlan";
+import Exercises from "@/components/exercises";
 import React from "react";
 
 const page = () => {

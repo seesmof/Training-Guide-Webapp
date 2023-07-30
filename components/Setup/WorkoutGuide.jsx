@@ -1,65 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import Exercises from "./exercises";
+import Exercises from "../exercises";
+import Navbar from "./guide/Navbar";
 
-const Stopwatch = () => {
-  const [elapsedTime, setElapsedTime] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setElapsedTime((elapsedTime) => elapsedTime + 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const minutes = Math.floor(elapsedTime / 60);
-  const seconds = elapsedTime % 60;
-
-  return (
-    <div>
-      {`${minutes.toString().padStart(2, "0")}:${seconds
-        .toString()
-        .padStart(2, "0")}`}
-    </div>
-  );
-};
-
-const Countdown = ({ seconds }) => {
-  const [time, setTime] = useState(seconds);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const minutes = Math.floor(time / 60);
-  const secondsRemaining = time % 60;
-
-  return (
-    <div>
-      {minutes < 10 ? `0${minutes}` : minutes}:
-      {secondsRemaining < 10 ? `0${secondsRemaining}` : secondsRemaining}
-    </div>
-  );
-};
-
-const WorkoutGuide = ({ type, setWorkoutGuide }) => {
+const WorkoutGuide = ({ type, isActive, setIsActive }) => {
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [currentSet, setCurrentSet] = useState(1);
-
-  const REST_TIME = 3;
-  const [rest, setRest] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(REST_TIME);
 
   useEffect(() => {
     const obj = Exercises.find((e) => e.name === type)?.exercises;
@@ -67,7 +15,6 @@ const WorkoutGuide = ({ type, setWorkoutGuide }) => {
       setExercises(obj);
       setCurrentExercise(obj[0]);
       setCurrentSet(1);
-      setRest(false);
     }
   }, [type]);
 
@@ -79,7 +26,7 @@ const WorkoutGuide = ({ type, setWorkoutGuide }) => {
       if (currentIndex === exercises.length - 1) {
         setRest(true);
         setRemainingTime(REST_TIME);
-        setWorkoutGuide(false);
+        setIsActive(false);
       }
 
       setCurrentExercise(exercises[currentIndex + 1]);
@@ -93,16 +40,7 @@ const WorkoutGuide = ({ type, setWorkoutGuide }) => {
     <>
       <div className="bg-white min-h-screen flex">
         <div className="flex flex-col container mx-auto max-w-5xl">
-          <nav className="flex justify-between font-medium items-center p-4 lg:p-6 border-b border-neutral-300">
-            <Link href="/" className="flex flex-row items-center space-x-1">
-              <IoIosArrowBack />
-              <span>Home</span>
-            </Link>
-
-            <h2 className="text-2xl">{type}</h2>
-
-            <Stopwatch />
-          </nav>
+          <Navbar type={type} />
 
           <main className="flex flex-col flex-1 justify-between w-full p-4 lg:p-6">
             <div className="flex py-4 lg:py-6 flex-col space-y-4">
@@ -131,7 +69,7 @@ const WorkoutGuide = ({ type, setWorkoutGuide }) => {
               </div>
             </div>
             <button
-              className="bg-black text-white hover:bg-black/80 text-center rounded-md w-full py-2"
+              className="btn"
               onClick={() => {
                 handleNextSet();
               }}
