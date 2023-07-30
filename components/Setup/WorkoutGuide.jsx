@@ -75,7 +75,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
                 src={`/img/video/${currentExercise?.video}.mp4`}
                 autoPlay
                 muted
-                loop
+                loop={!isBreak}
                 controls={false}
                 className="w-full rounded-md object-cover"
               ></video>
