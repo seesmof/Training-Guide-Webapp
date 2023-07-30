@@ -25,35 +25,34 @@ const WorkoutGuide = ({ type, setIsActive }) => {
     }
   }, [type]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBreakTime((breakTime) => breakTime - 1);
-    }, breakTime * 1000);
-
-    return () => clearInterval(interval);
-  }, [isBreak]);
-
   const handleNextSet = () => {
     const isLastSet = currentSet === currentExercise?.sets;
-
-    if (isLastSet) {
-      const currentIndex = exercises.findIndex(
-        (exercise) => exercise === currentExercise
-      );
-      const isLastExercise = currentIndex === exercises.length - 1;
-
-      if (isLastExercise) {
-        setIsActive(false);
-      }
-
-      setCurrentExercise(exercises[currentIndex + 1]);
-      setCurrentSet(1);
-    } else {
-      setCurrentSet(currentSet + 1);
-    }
+    console.log(currentExercise?.shortBreak);
 
     setIsBreak(true);
-    setBreakTime(currentExercise?.shortBreak);
+    isLastSet ? setIsLongBreak(true) : setIsLongBreak(false);
+    setBreakTime(
+      isLongBreak ? currentExercise.longBreak : currentExercise.shortBreak
+    );
+    console.log(breakTime);
+
+    setTimeout(() => {
+      if (isLastSet) {
+        const currentIndex = exercises.findIndex(
+          (exercise) => exercise === currentExercise
+        );
+        const isLastExercise = currentIndex === exercises.length - 1;
+
+        if (isLastExercise) {
+          setIsActive(false);
+        }
+
+        setCurrentExercise(exercises[currentIndex + 1]);
+        setCurrentSet(1);
+      } else {
+        setCurrentSet(currentSet + 1);
+      }
+    }, breakTime);
   };
 
   return (
