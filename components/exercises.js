@@ -192,7 +192,7 @@ const Exercises = [
   },
   {
     id: 4,
-    name: "Full Body",
+    name: "Complete",
     image: "full_body.webp",
     exercises: [
       {
