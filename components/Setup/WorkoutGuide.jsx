@@ -3,11 +3,16 @@
 import React, { useEffect, useState } from "react";
 import Exercises from "../exercises";
 import Navbar from "./guide/Navbar";
+import Countdown from "../Countdown";
 
 const WorkoutGuide = ({ type, setIsActive }) => {
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [currentSet, setCurrentSet] = useState(1);
+
+  const [isBreak, setIsBreak] = useState(true);
+  const [isLongBreak, setIsLongBreak] = useState(false);
+  const [breakTime, setBreakTime] = useState(0);
 
   useEffect(() => {
     const exercisesOfType = Exercises.find((e) => e.name === type)?.exercises;
@@ -15,8 +20,18 @@ const WorkoutGuide = ({ type, setIsActive }) => {
       setExercises(exercisesOfType);
       setCurrentExercise(exercisesOfType[0]);
       setCurrentSet(1);
+      setBreakTime(exercisesOfType[0].shortBreak);
+      setIsBreak(false);
     }
   }, [type]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBreakTime((breakTime) => breakTime - 1);
+    }, breakTime * 1000);
+
+    return () => clearInterval(interval);
+  }, [isBreak]);
 
   const handleNextSet = () => {
     const isLastSet = currentSet === currentExercise?.sets;
@@ -36,6 +51,9 @@ const WorkoutGuide = ({ type, setIsActive }) => {
     } else {
       setCurrentSet(currentSet + 1);
     }
+
+    setIsBreak(true);
+    setBreakTime(currentExercise?.shortBreak);
   };
 
   return (
@@ -70,9 +88,21 @@ const WorkoutGuide = ({ type, setIsActive }) => {
                 </p>
               </div>
             </div>
-            <button className="btn btn-black" onClick={handleNextSet}>
-              Next Set
-            </button>
+            <div className="flex flex-col space-y-2">
+              <div
+                className={`flex flex-col space-y-4 ${
+                  isBreak ? "visible" : "hidden"
+                }`}
+              >
+                <h2 className="font-medium text-xl">
+                  Great job! Take a break now
+                </h2>
+                <Countdown seconds={breakTime + 1} />
+              </div>
+              <button className="btn btn-black" onClick={handleNextSet}>
+                Next Set
+              </button>
+            </div>
           </main>
         </div>
       </div>

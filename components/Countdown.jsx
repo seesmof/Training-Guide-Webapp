@@ -5,7 +5,7 @@ const Countdown = ({ seconds }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
     }, 1000);
 
     return () => clearInterval(interval);
