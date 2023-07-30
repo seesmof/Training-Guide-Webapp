@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Exercises from "../exercises";
 import Navbar from "./guide/Navbar";
-import Countdown from "../Countdown";
 
 const WorkoutGuide = ({ type, setIsActive }) => {
   const [exercises, setExercises] = useState([]);
@@ -46,7 +45,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
       }
 
       setIsBreak(false);
-    }, (BREAK_TIME + 1) * 1000);
+    }, (BREAK_TIME + 2) * 1000);
   };
 
   return (
@@ -88,7 +87,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
                 <h2 className="font-medium text-xl pb-1">
                   Great job! Take a break now
                 </h2>
-                <Countdown seconds={BREAK_TIME} />
+                {/* COUNTDOWN IN FORMAT MM:SS HERE PLEASE */}
               </div>
               <button className="btn btn-black" onClick={handleNextSet}>
                 Next Set
