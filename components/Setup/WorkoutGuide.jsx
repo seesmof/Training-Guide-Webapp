@@ -10,13 +10,11 @@ const WorkoutGuide = ({ type, setIsActive }) => {
   const [currentSet, setCurrentSet] = useState(1);
 
   const [isBreak, setIsBreak] = useState(true);
-  const BREAK_TIME = 120;
-  const [breakTime, setBreakTime] = useState(BREAK_TIME);
-
+  const [breakTime, setBreakTime] = useState(90);
   const [counter, setCounter] = useState(breakTime);
 
   useEffect(() => {
-    setCounter(breakTime);
+    setCounter(currentExercise?.break || 90);
 
     const interval = setInterval(() => {
       setCounter((counter) => counter - 1);
@@ -34,6 +32,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
       setCurrentExercise(exercisesOfType[0]);
       setCurrentSet(1);
       setIsBreak(false);
+      setBreakTime(currentExercise?.break || 90);
     }
   }, [type]);
 
@@ -41,7 +40,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
     const isLastSet = currentSet === currentExercise?.sets;
 
     setIsBreak(true);
-    setBreakTime(isLastSet ? BREAK_TIME * 2 : BREAK_TIME);
+    setBreakTime(currentExercise?.break || 90);
 
     setTimeout(() => {
       if (isLastSet) {
@@ -61,7 +60,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
       }
 
       setIsBreak(false);
-    }, (breakTime + 1) * 1000);
+    }, (currentExercise?.break + 1) * 1000);
   };
 
   return (
