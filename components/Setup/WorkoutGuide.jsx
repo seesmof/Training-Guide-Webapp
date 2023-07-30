@@ -108,8 +108,16 @@ const WorkoutGuide = ({ type, setIsActive }) => {
                   .toString()
                   .padStart(2, "0")}`}</p>
               </div>
-              <button className="btn btn-black" onClick={handleNextSet}>
-                Next Set
+              <button
+                className={`${
+                  !isBreak
+                    ? "btn btn-black"
+                    : "w-full py-2 text-center text-white rounded-md font-medium bg-neutral-600"
+                }`}
+                disabled={isBreak}
+                onClick={handleNextSet}
+              >
+                {isBreak ? "Break Time" : "Next Set"}
               </button>
             </div>
           </main>
