@@ -9,7 +9,8 @@ const WorkoutPlan = ({ name, image, exercises }) => {
 
   return (
     <>
-      {workoutGuide && <WorkoutGuide type={name} />}
+      {/* {workoutGuide && <WorkoutGuide type={name} />} */}
+      <WorkoutGuide type={name} />
 
       <div className="flex flex-col container mx-auto max-w-5xl">
         <div className="relative">
