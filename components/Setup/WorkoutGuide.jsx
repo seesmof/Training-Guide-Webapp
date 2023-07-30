@@ -10,10 +10,10 @@ const WorkoutGuide = ({ type, isActive, setIsActive }) => {
   const [currentSet, setCurrentSet] = useState(1);
 
   useEffect(() => {
-    const obj = Exercises.find((e) => e.name === type)?.exercises;
-    if (obj) {
-      setExercises(obj);
-      setCurrentExercise(obj[0]);
+    const exercisesOfType = Exercises.find((e) => e.name === type)?.exercises;
+    if (exercisesOfType) {
+      setExercises(exercisesOfType);
+      setCurrentExercise(exercisesOfType[0]);
       setCurrentSet(1);
     }
   }, [type]);
@@ -70,12 +70,7 @@ const WorkoutGuide = ({ type, isActive, setIsActive }) => {
                 </p>
               </div>
             </div>
-            <button
-              className="btn"
-              onClick={() => {
-                handleNextSet();
-              }}
-            >
+            <button className="btn" onClick={handleNextSet}>
               Next Set
             </button>
           </main>
