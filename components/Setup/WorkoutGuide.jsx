@@ -12,6 +12,20 @@ const WorkoutGuide = ({ type, setIsActive }) => {
   const [isBreak, setIsBreak] = useState(true);
   const BREAK_TIME = 120;
 
+  const [counter, setCounter] = useState(BREAK_TIME);
+
+  useEffect(() => {
+    setCounter(BREAK_TIME);
+
+    const interval = setInterval(() => {
+      setCounter((counter) => counter - 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isBreak]);
+
   useEffect(() => {
     const exercisesOfType = Exercises.find((e) => e.name === type)?.exercises;
     if (exercisesOfType) {
@@ -45,7 +59,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
       }
 
       setIsBreak(false);
-    }, (BREAK_TIME + 2) * 1000);
+    }, (BREAK_TIME + 1) * 1000);
   };
 
   return (
@@ -87,7 +101,11 @@ const WorkoutGuide = ({ type, setIsActive }) => {
                 <h2 className="font-medium text-xl pb-1">
                   Great job! Take a break now
                 </h2>
-                {/* COUNTDOWN IN FORMAT MM:SS HERE PLEASE */}
+                <p className="text-2xl">{`${Math.floor(counter / 60)
+                  .toString()
+                  .padStart(2, "0")}:${(counter % 60)
+                  .toString()
+                  .padStart(2, "0")}`}</p>
               </div>
               <button className="btn btn-black" onClick={handleNextSet}>
                 Next Set
