@@ -33,6 +33,8 @@ This repository contains a list of training programs with an ability to start an
 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+
 ## Links
 
 - [Live Preview](https://seesmof.github.io/training-program-guide/)
