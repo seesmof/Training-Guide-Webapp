@@ -35,7 +35,6 @@ const WorkoutPlan = ({ name, image, exercises }) => {
                   <a
                     href={exercise.help}
                     className="font-medium text-lg lg:text-xl"
-                    target="_blank"
                     title="See a more detailed instruction for the exercise"
                   >
                     {exercise.name}
