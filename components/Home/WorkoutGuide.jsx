@@ -52,7 +52,7 @@ const Countdown = ({ seconds }) => {
   );
 };
 
-const WorkoutGuide = ({ type }) => {
+const WorkoutGuide = ({ type, setWorkoutGuide }) => {
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [currentSet, setCurrentSet] = useState(1);
@@ -71,29 +71,21 @@ const WorkoutGuide = ({ type }) => {
     }
   }, [type]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime((prevTime) => prevTime - 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [rest]);
-
-  useEffect(() => {
-    if (remainingTime === 0) {
-      setRest(false);
-      handleNextSet();
-    }
-  }, [remainingTime]);
-
   const handleNextSet = () => {
     if (currentSet === currentExercise?.sets) {
+      const currentIndex = exercises.findIndex(
+        (exercise) => exercise === currentExercise
+      );
+      if (currentIndex === exercises.length - 1) {
+        setRest(true);
+        setRemainingTime(REST_TIME);
+        setWorkoutGuide(false);
+      }
+
+      setCurrentExercise(exercises[currentIndex + 1]);
       setCurrentSet(1);
-      setCurrentExercise((prevExercise) => prevExercise + 1);
     } else {
-      setCurrentSet((prevSet) => prevSet + 1);
+      setCurrentSet(currentSet + 1);
     }
   };
 
@@ -112,51 +104,41 @@ const WorkoutGuide = ({ type }) => {
             <Stopwatch />
           </nav>
 
-          {rest ? (
-            <>
-              <div className="flex flex-col p-4 lg:p-6">
-                <h1>Take A Break!</h1>
-                <Countdown seconds={REST_TIME} />
-              </div>
-            </>
-          ) : (
-            <main className="flex flex-col flex-1 justify-between w-full p-4 lg:p-6">
-              <div className="flex py-4 lg:py-6 flex-col space-y-4">
-                <video
-                  src={`/img/video/${currentExercise?.video}.mp4`}
-                  autoPlay
-                  muted
-                  loop
-                  controls={false}
-                  className="w-full rounded-md object-cover"
-                ></video>
+          <main className="flex flex-col flex-1 justify-between w-full p-4 lg:p-6">
+            <div className="flex py-4 lg:py-6 flex-col space-y-4">
+              <video
+                src={`/img/video/${currentExercise?.video}.mp4`}
+                autoPlay
+                muted
+                loop
+                controls={false}
+                className="w-full rounded-md object-cover"
+              ></video>
 
-                <h2 className="font-medium text-xl">
-                  {currentExercise?.name}: {currentSet}
-                </h2>
-                <p>{currentExercise?.description}</p>
-                <div className="flex flex-row space-x-4">
-                  <p className="font-medium flex flex-row gap-1">
-                    Sets:
-                    <span className="font-normal">{currentExercise?.sets}</span>
-                  </p>
-                  <p className="font-medium flex flex-row gap-1">
-                    Reps:
-                    <span className="font-normal">{currentExercise?.reps}</span>
-                  </p>
-                </div>
+              <h2 className="font-medium text-xl">
+                {currentExercise?.name}: {currentSet}
+              </h2>
+              <p>{currentExercise?.description}</p>
+              <div className="flex flex-row space-x-4">
+                <p className="font-medium flex flex-row gap-1">
+                  Sets:
+                  <span className="font-normal">{currentExercise?.sets}</span>
+                </p>
+                <p className="font-medium flex flex-row gap-1">
+                  Reps:
+                  <span className="font-normal">{currentExercise?.reps}</span>
+                </p>
               </div>
-              <button
-                className="bg-black text-white hover:bg-black/80 text-center rounded-md w-full py-2"
-                onClick={() => {
-                  setRest(true);
-                  handleNextSet();
-                }}
-              >
-                Next Set
-              </button>
-            </main>
-          )}
+            </div>
+            <button
+              className="bg-black text-white hover:bg-black/80 text-center rounded-md w-full py-2"
+              onClick={() => {
+                handleNextSet();
+              }}
+            >
+              Next Set
+            </button>
+          </main>
         </div>
       </div>
     </>
