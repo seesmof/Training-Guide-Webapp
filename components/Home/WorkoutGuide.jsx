@@ -56,8 +56,10 @@ const WorkoutGuide = ({ type }) => {
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [currentSet, setCurrentSet] = useState(1);
+
+  const REST_TIME = 3;
   const [rest, setRest] = useState(false);
-  const REST_TIME = 10;
+  const [remainingTime, setRemainingTime] = useState(REST_TIME);
 
   useEffect(() => {
     const obj = Exercises.find((e) => e.name === type)?.exercises;
@@ -69,9 +71,30 @@ const WorkoutGuide = ({ type }) => {
     }
   }, [type]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingTime((prevTime) => prevTime - 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [rest]);
+
+  useEffect(() => {
+    if (remainingTime === 0) {
+      setRest(false);
+      handleNextSet();
+    }
+  }, [remainingTime]);
+
   const handleNextSet = () => {
-    setCurrentSet((prevSet) => prevSet + 1);
-    setRest(true);
+    if (currentSet === currentExercise?.sets) {
+      setCurrentSet(1);
+      setCurrentExercise((prevExercise) => prevExercise + 1);
+    } else {
+      setCurrentSet((prevSet) => prevSet + 1);
+    }
   };
 
   return (
@@ -105,7 +128,7 @@ const WorkoutGuide = ({ type }) => {
                   muted
                   loop
                   controls={false}
-                  className="w-full rounded-md object-cover shadow-md"
+                  className="w-full rounded-md object-cover"
                 ></video>
 
                 <h2 className="font-medium text-xl">
@@ -125,7 +148,10 @@ const WorkoutGuide = ({ type }) => {
               </div>
               <button
                 className="bg-black text-white hover:bg-black/80 text-center rounded-md w-full py-2"
-                onClick={() => handleNextSet()}
+                onClick={() => {
+                  setRest(true);
+                  handleNextSet();
+                }}
               >
                 Next Set
               </button>
