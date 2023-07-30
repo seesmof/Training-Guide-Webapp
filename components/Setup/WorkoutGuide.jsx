@@ -19,13 +19,15 @@ const WorkoutGuide = ({ type, isActive, setIsActive }) => {
   }, [type]);
 
   const handleNextSet = () => {
-    if (currentSet === currentExercise?.sets) {
+    const isLastSet = currentSet === currentExercise?.sets;
+
+    if (isLastSet) {
       const currentIndex = exercises.findIndex(
         (exercise) => exercise === currentExercise
       );
-      if (currentIndex === exercises.length - 1) {
-        setRest(true);
-        setRemainingTime(REST_TIME);
+      const isLastExercise = currentIndex === exercises.length - 1;
+
+      if (isLastExercise) {
         setIsActive(false);
       }
 
