@@ -1,9 +1,16 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
+import WorkoutGuide from "./WorkoutGuide";
 
 const WorkoutPlan = ({ name, image, exercises }) => {
+  const [workoutGuide, setWorkoutGuide] = useState(false);
+
   return (
     <>
+      {workoutGuide && <WorkoutGuide type={name} />}
+
       <div className="flex flex-col container mx-auto max-w-5xl">
         <div className="relative">
           <div className="absolute top-0 bottom-0 right-0 left-0 bg-black/30 flex items-center justify-center text-white font-bold text-2xl md:text-3xl lg:text-4xl lg:m-6">
@@ -55,12 +62,12 @@ const WorkoutPlan = ({ name, image, exercises }) => {
             ))}
           </div>
 
-          <Link
-            href={name.toLowerCase()}
+          <button
             className="py-3 text-lg w-full text-center bg-black sticky bottom-4 text-white rounded-md font-medium capitalize hover:bg-black/80"
+            onClick={() => setWorkoutGuide(true)}
           >
             Start Exercise
-          </Link>
+          </button>
         </div>
       </div>
     </>
