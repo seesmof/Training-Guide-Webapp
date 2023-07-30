@@ -257,6 +257,117 @@ const Exercises = [
       },
     ],
   },
+  {
+    id: 5,
+    name: "Stretching",
+    image: "stretching.jpg",
+    exercises: [
+      {
+        name: "Standing Hamstring Stretch",
+        help: "https://www.healthline.com/health/fitness-exercise/hamstring-stretches#standing",
+        sets: 3,
+        reps: "30s",
+        video: "hamstringStretch",
+        description:
+          "Stand with one leg lifted and resting on a chair or bench. Keeping back straight, hinge from hips until stretch is felt in back of lifted leg. Hold then switch legs.",
+        break: 60,
+      },
+      {
+        name: "Seated Twist Stretch",
+        help: "https://www.healthline.com/health/fitness-exercise/seated-trunk-rotation",
+        sets: 3,
+        reps: "30s",
+        video: "seatedTwist",
+        description:
+          "Sit on floor with knees bent and feet flat. Keeping back straight, rotate torso to one side until stretch is felt. Hold then repeat on opposite side.",
+        break: 30,
+      },
+      {
+        name: "Kneeling Hip Flexor",
+        help: "https://www.healthline.com/health/fitness-exercise/stretches-for-tight-hip-flexors#kneeling",
+        sets: 3,
+        reps: "30s",
+        video: "hipFlexor",
+        description:
+          "From kneeling lunge position, squeeze glutes and tilt pelvis forward until stretch is felt in front of hip. Hold then switch legs.",
+        break: 30,
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Balance",
+    image: "balance.jpg",
+    exercises: [
+      {
+        name: "Tree Pose",
+        help: "https://www.yogajournal.com/poses/tree-pose",
+        sets: 5,
+        reps: "60s",
+        video: "treePose",
+        description:
+          "Balance on one leg, pressing foot into standing leg. Bring other foot to calf or inner thigh and raise arms overhead. Focus gaze and hold.",
+        break: 30,
+      },
+      {
+        name: "Warrior 3",
+        help: "https://www.yogajournal.com/poses/warrior-iii-pose",
+        sets: 5,
+        reps: "60s",
+        video: "warrior3",
+        description:
+          "From standing, hinge at hips to extend one leg back, arms forward and torso parallel to floor. Find balance and hold with gaze steady.",
+        break: 30,
+      },
+      {
+        name: "Standing Leg Lifts",
+        help: "https://www.self.com/gallery/leg-exercises-you-can-do-at-home",
+        sets: 3,
+        reps: 10,
+        video: "legLifts",
+        description:
+          "Stand behind chair for support. Raise one leg straight out in front of you, engaging core. Hold briefly then lower back down with control. Repeat on both sides.",
+        break: 30,
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "Cardio",
+    image: "cardio.jpg",
+    exercises: [
+      {
+        name: "Jumping Jacks",
+        help: "https://www.healthline.com/health/exercise-fitness/jumping-jacks",
+        sets: 4,
+        reps: 20,
+        video: "jumpingJacks",
+        description:
+          "Stand with feet together and arms at sides. Jump feet out wide and raise arms overhead at same time. Jump back to start position and repeat.",
+        break: 60,
+      },
+      {
+        name: "High Knees",
+        help: "https://www.self.com/gallery/bodyweight-exercises-you-can-do-at-home",
+        sets: 4,
+        reps: 20,
+        video: "highKnees",
+        description:
+          "Run in place, lifting knees as high as possible towards chest. Pump arms and keep torso upright. Repeat for specified reps.",
+        break: 60,
+      },
+      {
+        name: "Mountain Climbers",
+        help: "https://www.healthline.com/health/exercise-fitness/mountain-climbers",
+        sets: 4,
+        reps: 20,
+        video: "mtnClimbers",
+        description:
+          "In high plank position, drive one knee towards chest. Switch legs in quick succession, like climbing a mountain. Keep core engaged.",
+        break: 60,
+      },
+    ],
+  },
 ];
 
 export default Exercises;
