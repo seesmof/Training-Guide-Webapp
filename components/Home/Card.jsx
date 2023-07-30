@@ -24,7 +24,10 @@ const Card = ({ name, image, exercises }) => {
               </li>
             ))}
           </ul>
-          <Link href={name.toLowerCase().replace(" ", "_")} className="btn">
+          <Link
+            href={name.toLowerCase().replace(" ", "_")}
+            className="btn btn-black"
+          >
             start training
           </Link>
         </div>

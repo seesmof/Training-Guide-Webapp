@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Exercises from "../exercises";
 import Navbar from "./guide/Navbar";
 
-const WorkoutGuide = ({ type, isActive, setIsActive }) => {
+const WorkoutGuide = ({ type, setIsActive }) => {
   const [exercises, setExercises] = useState([]);
   const [currentExercise, setCurrentExercise] = useState(null);
   const [currentSet, setCurrentSet] = useState(1);
@@ -70,7 +70,7 @@ const WorkoutGuide = ({ type, isActive, setIsActive }) => {
                 </p>
               </div>
             </div>
-            <button className="btn" onClick={handleNextSet}>
+            <button className="btn btn-black" onClick={handleNextSet}>
               Next Set
             </button>
           </main>

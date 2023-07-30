@@ -67,7 +67,7 @@ const WorkoutPlan = ({ name, image, exercises }) => {
             </div>
 
             <button
-              className="btn sticky bottom-4"
+              className="btn btn-black sticky bottom-4"
               onClick={() => setIsActive(true)}
             >
               Start Exercise

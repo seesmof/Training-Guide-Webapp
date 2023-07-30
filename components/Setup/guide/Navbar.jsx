@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import Stopwatch from "@/components/Stopwatch";
@@ -13,7 +14,7 @@ const Navbar = ({ type }) => {
           <span>Home</span>
         </Link>
 
-        <h2 className="text-2xl">{type}</h2>
+        <h2 className="text-2xl select-none">{type}</h2>
 
         <div className="flex flex-row items-center space-x-1">
           <AiOutlineClockCircle />
