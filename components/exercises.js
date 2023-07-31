@@ -264,7 +264,7 @@ const Exercises = [
     exercises: [
       {
         name: "Standing Hamstring Stretch",
-        help: "https://www.healthline.com/health/fitness-exercise/hamstring-stretches#standing",
+        help: "https://workoutlabs.com/exercise-guide/standing-hamstring-stretch/",
         sets: 3,
         reps: "30s",
         video: "hamstringStretch",
@@ -274,7 +274,7 @@ const Exercises = [
       },
       {
         name: "Seated Twist Stretch",
-        help: "https://www.healthline.com/health/fitness-exercise/seated-trunk-rotation",
+        help: "https://www.athletico.com/2017/06/21/stretch-week-seated-twist-neck-stretch/",
         sets: 3,
         reps: "30s",
         video: "seatedTwist",
@@ -284,7 +284,7 @@ const Exercises = [
       },
       {
         name: "Kneeling Hip Flexor",
-        help: "https://www.healthline.com/health/fitness-exercise/stretches-for-tight-hip-flexors#kneeling",
+        help: "https://evofitness.ch/hip-flexor-stretch/",
         sets: 3,
         reps: "30s",
         video: "hipFlexor",
@@ -301,7 +301,7 @@ const Exercises = [
     exercises: [
       {
         name: "Tree Pose",
-        help: "https://www.yogajournal.com/poses/tree-pose",
+        help: "https://www.yogajournal.com/poses/tree-pose-2/",
         sets: 5,
         reps: "60s",
         video: "treePose",
@@ -321,7 +321,7 @@ const Exercises = [
       },
       {
         name: "Standing Leg Lifts",
-        help: "https://www.self.com/gallery/leg-exercises-you-can-do-at-home",
+        help: "https://www.daniwinksflexibility.com/flexopedia/standing-leg-lifts",
         sets: 3,
         reps: 10,
         video: "legLifts",
@@ -338,7 +338,7 @@ const Exercises = [
     exercises: [
       {
         name: "Jumping Jacks",
-        help: "https://www.healthline.com/health/exercise-fitness/jumping-jacks",
+        help: "https://www.spotebi.com/exercise-guide/jumping-jacks/",
         sets: 4,
         reps: 20,
         video: "jumpingJacks",
@@ -348,7 +348,7 @@ const Exercises = [
       },
       {
         name: "High Knees",
-        help: "https://www.self.com/gallery/bodyweight-exercises-you-can-do-at-home",
+        help: "https://www.healthline.com/health/fitness/high-knees-benefits#how-to",
         sets: 4,
         reps: 20,
         video: "highKnees",
@@ -358,7 +358,7 @@ const Exercises = [
       },
       {
         name: "Mountain Climbers",
-        help: "https://www.healthline.com/health/exercise-fitness/mountain-climbers",
+        help: "https://www.verywellfit.com/mountain-climbers-exercise-3966947",
         sets: 4,
         reps: 20,
         video: "mtnClimbers",
