@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import React from "react";
 
 const ExerciseNextSet = ({ isBreak, handleNextSet, counter }) => {
@@ -10,17 +11,18 @@ const ExerciseNextSet = ({ isBreak, handleNextSet, counter }) => {
             .toString()
             .padStart(2, "0")}:${(counter % 60).toString().padStart(2, "0")}`}
         </p>
-        <button
-          className={`${
+
+        <Button
+          classes={`${
             !isBreak
-              ? "btn btn-black"
+              ? "btn-black"
               : "w-full py-2 text-center text-white rounded-md font-medium bg-neutral-600"
           }`}
-          disabled={isBreak}
           onClick={handleNextSet}
+          disabled={isBreak}
         >
           {isBreak ? "Break Time" : "Next Set"}
-        </button>
+        </Button>
       </div>
     </>
   );

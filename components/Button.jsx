@@ -1,12 +1,12 @@
 import React from "react";
 
-const Button = ({ onClick, classes, children }) => {
+const Button = ({ onClick, classes, disabled, children }) => {
   const defaultClasses = "btn";
   const mergedClasses = `${defaultClasses} ${classes}`;
 
   return (
     <>
-      <button className={mergedClasses} onClick={onClick}>
+      <button className={mergedClasses} onClick={onClick} disabled={disabled}>
         {children}
       </button>
     </>
