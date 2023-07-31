@@ -5,13 +5,13 @@ const Card = ({ name, image, exercises }) => {
   return (
     <>
       <div className="flex border rounded-md border-neutral-300 flex-col overflow-hidden">
-        <Link href={name.toLowerCase().replace(" ", "_")}>
+        <div className="relative h-40 w-full bg-neutral-200">
           <img
             src={`/img/${image}`}
             alt=""
             className="object-cover h-40 w-full"
           />
-        </Link>
+        </div>
         <div className="flex flex-col p-4 space-y-4">
           <h2 className="font-bold text-xl text-neutral-800 hover:underline underline-offset-4">
             <Link href={name.toLowerCase().replace(" ", "_")}>{name}</Link>
