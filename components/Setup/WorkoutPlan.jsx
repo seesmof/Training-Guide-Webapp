@@ -3,6 +3,7 @@ import { useState } from "react";
 import WorkoutGuide from "./WorkoutGuidePage";
 import ExercisePreview from "./plan/ExercisePreview";
 import WorkoutBanner from "./plan/WorkoutBanner";
+import Button from "../Button";
 
 const WorkoutPlan = ({ name, image, exercises }) => {
   const [isActive, setIsActive] = useState(false);
@@ -26,12 +27,12 @@ const WorkoutPlan = ({ name, image, exercises }) => {
               ))}
             </div>
 
-            <button
-              className="btn btn-black sticky bottom-4"
+            <Button
+              classes={"btn-black sticky bottom-4"}
               onClick={() => setIsActive(true)}
             >
               Start Exercise
-            </button>
+            </Button>
           </div>
         </div>
       )}
