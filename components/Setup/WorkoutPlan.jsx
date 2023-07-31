@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import WorkoutGuide from "./WorkoutGuide";
+import WorkoutGuide from "./WorkoutGuidePage";
 
 const WorkoutPlan = ({ name, image, exercises }) => {
   const [isActive, setIsActive] = useState(false);

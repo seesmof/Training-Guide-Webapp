@@ -70,7 +70,7 @@ const WorkoutGuide = ({ type, setIsActive }) => {
           <Navbar type={type} />
 
           <main className="flex flex-col flex-1 justify-between w-full p-4 lg:p-6">
-            <div className="flex py-4 lg:py-6 flex-col space-y-4">
+            <div className="flex flex-col space-y-4">
               <video
                 src={`/img/video/${currentExercise?.video}.mp4`}
                 autoPlay
