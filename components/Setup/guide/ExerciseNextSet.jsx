@@ -1,16 +1,35 @@
 import Button from "@/components/Button";
 import React from "react";
 
-const ExerciseNextSet = ({ isBreak, handleNextSet, counter }) => {
+const ExerciseNextSet = ({
+  isBreak,
+  handleNextSet,
+  counter,
+  isBreakSkipped,
+  setIsBreakSkipped,
+}) => {
   return (
     <>
-      <div className="flex flex-col space-y-2">
-        <p className={`${isBreak ? "visible" : "hidden"} text-xl`}>
-          Great job! Take a break.{" "}
-          {`${Math.floor(counter / 60)
-            .toString()
-            .padStart(2, "0")}:${(counter % 60).toString().padStart(2, "0")}`}
-        </p>
+      <div className="flex flex-col  space-y-2">
+        <div
+          className={`${
+            isBreak ? "visible" : "hidden"
+          } flex flex-row items-center justify-between w-full`}
+        >
+          <p className="text-xl">
+            Great job! Take a break.{" "}
+            {`${Math.floor(counter / 60)
+              .toString()
+              .padStart(2, "0")}:${(counter % 60).toString().padStart(2, "0")}`}
+          </p>
+
+          <Button
+            classes={"btn-blue max-w-xs"}
+            onClick={setIsBreakSkipped(true)}
+          >
+            Skip Break
+          </Button>
+        </div>
 
         <Button
           classes={`${

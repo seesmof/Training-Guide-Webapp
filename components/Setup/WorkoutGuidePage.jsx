@@ -12,6 +12,22 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
   const [isBreak, setIsBreak] = useState(true);
   const [breakTime, setBreakTime] = useState(90);
   const [counter, setCounter] = useState(breakTime);
+  const [isBreakSkipped, setIsBreakSkipped] = useState(false);
+  const moveToNextSet = ({ isLastSet }) => {
+    if (isLastSet) {
+      const currentIndex = exercises.findIndex(
+        (exercise) => exercise === currentExercise
+      );
+      const isLastExercise = currentIndex === exercises.length - 1;
+      if (isLastExercise) {
+        setIsActive(false);
+      }
+      setCurrentExercise(exercises[currentIndex + 1]);
+      setCurrentSet(1);
+    } else {
+      setCurrentSet(currentSet + 1);
+    }
+  };
 
   useEffect(() => {
     setCounter(currentExercise?.break || 90);
@@ -31,29 +47,27 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
       setCurrentSet(1);
       setIsBreak(false);
       setBreakTime(currentExercise?.break || 90);
+      setIsBreakSkipped(false);
     }
+    console.log(isBreakSkipped);
   }, [type]);
 
   const handleNextSet = () => {
     const isLastSet = currentSet === currentExercise?.sets;
-    setIsBreak(true);
-    setBreakTime(currentExercise?.break || 90);
-    setTimeout(() => {
-      if (isLastSet) {
-        const currentIndex = exercises.findIndex(
-          (exercise) => exercise === currentExercise
-        );
-        const isLastExercise = currentIndex === exercises.length - 1;
-        if (isLastExercise) {
-          setIsActive(false);
-        }
-        setCurrentExercise(exercises[currentIndex + 1]);
-        setCurrentSet(1);
-      } else {
-        setCurrentSet(currentSet + 1);
-      }
+    console.log(isBreakSkipped);
+
+    if (isBreakSkipped) {
+      setIsBreakSkipped(false);
       setIsBreak(false);
-    }, (currentExercise?.break + 1) * 1000);
+      moveToNextSet(isLastSet);
+    } else {
+      setIsBreak(true);
+      setBreakTime(currentExercise?.break || 90);
+      setTimeout(() => {
+        moveToNextSet(isLastSet);
+        setIsBreak(false);
+      }, (currentExercise?.break + 1) * 1000);
+    }
   };
 
   return (
@@ -71,6 +85,8 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
               isBreak={isBreak}
               handleNextSet={handleNextSet}
               counter={counter}
+              isBreakSkipped={isBreakSkipped}
+              setIsBreakSkipped={setIsBreakSkipped}
             />
           </main>
         </div>
