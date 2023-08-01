@@ -12,7 +12,6 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
   const [isBreak, setIsBreak] = useState(true);
   const [breakTime, setBreakTime] = useState(90);
   const [counter, setCounter] = useState(breakTime);
-  const [isBreakSkipped, setIsBreakSkipped] = useState(false);
   const moveToNextSet = ({ isLastSet }) => {
     if (isLastSet) {
       const currentIndex = exercises.findIndex(
@@ -47,27 +46,18 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
       setCurrentSet(1);
       setIsBreak(false);
       setBreakTime(currentExercise?.break || 90);
-      setIsBreakSkipped(false);
     }
-    console.log(isBreakSkipped);
   }, [type]);
 
   const handleNextSet = () => {
     const isLastSet = currentSet === currentExercise?.sets;
-    console.log(isBreakSkipped);
+    setIsBreak(true);
+    setBreakTime(currentExercise?.break || 90);
 
-    if (isBreakSkipped) {
-      setIsBreakSkipped(false);
-      setIsBreak(false);
+    setTimeout(() => {
       moveToNextSet(isLastSet);
-    } else {
-      setIsBreak(true);
-      setBreakTime(currentExercise?.break || 90);
-      setTimeout(() => {
-        moveToNextSet(isLastSet);
-        setIsBreak(false);
-      }, (currentExercise?.break + 1) * 1000);
-    }
+      setIsBreak(false);
+    }, (currentExercise?.break + 1) * 1000);
   };
 
   return (
@@ -85,8 +75,6 @@ const WorkoutGuidePage = ({ type, setIsActive }) => {
               isBreak={isBreak}
               handleNextSet={handleNextSet}
               counter={counter}
-              isBreakSkipped={isBreakSkipped}
-              setIsBreakSkipped={setIsBreakSkipped}
             />
           </main>
         </div>
