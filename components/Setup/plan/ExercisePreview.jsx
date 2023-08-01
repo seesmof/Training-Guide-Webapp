@@ -1,10 +1,7 @@
 const ExercisePreview = ({ exercise }) => {
   return (
     <>
-      <div
-        key={exercise}
-        className="flex flex-col md:flex-row space-y-3 space-x-3 md:space-x-6 border-b border-neutral-300 md:pb-6 pb-4"
-      >
+      <div className="flex flex-col md:flex-row space-y-3 md:space-x-6 border-b border-neutral-300 md:pb-6 pb-4">
         <video
           src={`/img/video/${exercise.video}.mp4`}
           autoPlay
